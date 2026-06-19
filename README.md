@@ -14,36 +14,26 @@
 
 ## 系统架构 · System Architecture
 
-![System Architecture](docs/images/architecture.svg)
+### JESR Closed-Loop Pipeline · JESR 闭环流水线
 
-The pipeline has five layers:
+![JESR Closed Loop](docs/images/10_jesr_closed_loop.png)
 
-| 层 Layer | 模块 Module | 职责 Responsibility |
-|:---|:---|:---|
-| **Entry** 入口 | Phone Upload · Seed Gallery · Preference QA | User intent capture via swipe, questionnaire, or reference photos |
-| **JESR-Core** 核心 | JESR-Aesthetic-Profile · Recipe System | 8-dim profile vector → parameterized recipe in 3 domains (tone, face, creative) |
-| **Orchestrator** 编排 | Recipe Compilation · Feedback · Rollback · Audit | Stateful SISO loop: iterate → feedback → update → re-render |
-| **Rendering** 渲染 | JESR-Fidelity · JESR-Creative · Metric Control | Smart optimize + targeted retouch → diffusion img2img → identity guard |
-| **Output** 输出 | Image Delivery · Session Persistence · Logging | Rendered result via `/api/assets/job/{id}` |
+The JESR pipeline forms a **closed-loop control system**: user intent (via swipe/preference/reference) generates an 8-dimensional **JESR-Aesthetic-Profile** vector, which compiles into a parameterized recipe. The JESR-Orchestrator schedules Fidelity (smart optimize / targeted retouch) and Creative (diffusion img2img style transfer) rendering, guarded by **Metric Control** — an identity-preservation checker that retries with progressively reduced denoising strength and falls back to Fidelity output when identity drops below threshold.
 
-### JESR-Aesthetic-Profile Vector
+### Architecture with Constraints · 约束架构
 
-The profile encodes user aesthetic preferences in 8 continuous dimensions (range [-1, 1]):
+![Architecture Constraints](docs/images/12_architecture_constraints.png)
 
-| Dimension | Description |
-|:---|:---|
-| `light_tendency` | Preference for bright vs. dark tone |
-| `warmth` | Warm vs. cool color temperature |
-| `contrast` | High vs. low contrast |
-| `texture_tendency` | Preference for skin texture preservation |
-| `makeup_intensity` | Makeup strength (lip color, eye emphasis) |
-| `facial_detail_preference` | How much facial reshaping is acceptable |
-| `style_strength` | Creative style transfer intensity |
-| `identity_tolerance` | Acceptable identity drift (governs metric control threshold) |
+Three core constraint layers govern the system:
+1. **Identity Preservation** (身份保真) — ArcFace/FaceNet similarity ≥ θ threshold
+2. **Style Consistency** (风格一致性) — profile-driven recipe ensures cross-dimensional coherence
+3. **Safety Guard** (安全守卫) — fallback to Fidelity when Creative compromises identity
 
-### Metric Control Guard
+### End-to-End User Flow · 端到端用户流程
 
-Before delivering creative (diffusion img2img) output, the system evaluates identity similarity (ArcFace / FaceNet). If similarity falls below threshold, it retries with progressively reduced denoising strength (4 steps, floor 0.08). On all failures, it falls back to the fidelity output — ensuring **identity is never compromised for style**.
+![End to End Flow](docs/images/14_end_to_end_flow.png)
+
+User journey: Entry (upload / seed gallery / preference) → Profile compilation → Style selection → Iterative feedback loop → Rendering with metric guard → Export. The system supports **5 creative style presets** (清新日系 · 复古港风 · 清透韩系 · 法式慵懒 · 美式辣妹) and **3 pain-tag feedback channels** (identity_not_preserved · texture_too_fake · style_or_lighting_mismatch).
 
 ---
 
