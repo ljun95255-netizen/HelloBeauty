@@ -1,0 +1,117 @@
+.swipe-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 68vh;
+  padding: 8px 0 24px;
+}
+
+.swipe-card {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
+  background: #fffdfa;
+  border: 1px solid rgba(28, 28, 28, 0.16);
+}
+
+.swipe-card-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+.swipe-like-badge,
+.swipe-dislike-badge {
+  position: absolute;
+  top: 24px;
+  padding: 8px 16px;
+  border: 1px solid currentColor;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.swipe-like-badge {
+  right: 16px;
+  color: #1c1c1c;
+  transform: rotate(12deg);
+}
+
+.swipe-dislike-badge {
+  left: 16px;
+  color: #6b7280;
+  transform: rotate(-12deg);
+}
+
+.swipe-card-info {
+  padding: 16px;
+  background: #fffdfa;
+  border-top: 1px solid rgba(28, 28, 28, 0.12);
+}
+
+.swipe-card-filename {
+  color: #1c1c1c;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.swipe-actions {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.swipe-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 46px;
+  padding: 0 18px;
+  border: 1px solid rgba(28, 28, 28, 0.16);
+  background: #fffdfa;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 180ms ease;
+}
+
+.swipe-action-btn:active {
+  transform: scale(0.95);
+}
+
+.swipe-dislike {
+  color: #6b7280;
+}
+
+.swipe-like {
+  color: #1c1c1c;
+}
+
+.swipe-hint {
+  margin-top: 24px;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.swipe-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 16px;
+}
+
+.swipe-complete-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1c1c1c;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Songti SC", serif;
+}
+
+.swipe-complete-subtitle {
+  font-size: 0.9375rem;
+  color: #6b7280;
+}

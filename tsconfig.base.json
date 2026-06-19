@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@hellobeauty/api-client": [
+        "packages/api-client/src"
+      ],
+      "@hellobeauty/domain": [
+        "packages/domain/src"
+      ],
+      "@hellobeauty/design-tokens": [
+        "packages/design-tokens/src"
+      ]
+    }
+  }
+}

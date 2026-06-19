@@ -1,0 +1,49 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# ===== Node.js =====
+node_modules/
+npm-debug.log*
+.next/
+.taro-cache/
+dist/
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Hermes =====
+.hermes/
+
+# ===== Project-specific withheld directories =====
+backend/model_adapters/
+backend/models/
+backend/workers/
+backend/services/experiments.py
+backend/providers/model_runtime.py
+vendor/
+npm/
+beauty/
+scripts/reproduce_core.sh
+scripts/jesr_profile_case_templates.py
+scripts/run_real_metric_experiments.py
+scripts/sync-mini-beauty.js
+
+# ===== Generated =====
+package-lock.json
+cloud_mount/
+/mnt/hellobeauty/

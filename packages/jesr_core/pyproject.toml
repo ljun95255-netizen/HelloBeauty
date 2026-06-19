@@ -1,0 +1,8 @@
+[project]
+name = "jesr-core"
+version = "0.1.0"
+description = "JESR recipe primitives for HelloBeauty"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = ["jesr_core"]

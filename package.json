@@ -1,0 +1,61 @@
+{
+  "name": "hellobeauty",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "overrides": {
+    "axios": "1.16.0",
+    "follow-redirects": "1.16.0",
+    "copy-webpack-plugin": "14.0.0",
+    "css-minimizer-webpack-plugin": "8.0.0",
+    "esbuild": "0.28.0",
+    "webpack": "5.91.0",
+    "webpack-dev-server": "5.2.3",
+    "serialize-javascript": "7.0.5",
+    "postcss": "8.5.14",
+    "vm2": "3.11.2",
+    "@tarojs/components": {
+      "swiper": "12.1.3"
+    },
+    "@tarojs/helper": {
+      "esbuild": "0.28.0"
+    },
+    "@tarojs/plugin-doctor": {
+      "glob": "13.0.6"
+    },
+    "@tarojs/webpack5-runner": {
+      "copy-webpack-plugin": "14.0.0",
+      "css-minimizer-webpack-plugin": "8.0.0",
+      "esbuild": "0.28.0",
+      "webpack": "5.91.0",
+      "webpack-dev-server": "5.2.3"
+    },
+    "miniprogram-simulate": {
+      "postcss": "8.5.14"
+    }
+  },
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "build:web": "npm --workspace apps/web run build",
+    "lint:web": "npm --workspace apps/web run lint",
+    "dev:mini": "npm --workspace apps/mini run dev:weapp",
+    "build:mini": "npm --workspace apps/mini run build:weapp",
+    "test:backend": "python -m pytest tests -q",
+    "dev:api": "python backend/app.py",
+    "start:backend": "bash scripts/start_backend.sh"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "14.0.0",
+    "css-minimizer-webpack-plugin": "8.0.0",
+    "download": "7.1.0",
+    "esbuild": "0.28.0",
+    "git-clone": "0.1.0",
+    "package-json": "6.5.0",
+    "postcss": "8.5.14",
+    "serialize-javascript": "7.0.5",
+    "webpack": "5.91.0",
+    "webpack-dev-server": "5.2.3"
+  }
+}
