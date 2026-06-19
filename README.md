@@ -1,34 +1,35 @@
 # HelloBeauty 🪞
 
-> **JESR 人像精修平台** — Joint Evaluation Scoring & Rendering for Automated Portrait Retouch  
-> 设计和实现一款基于 AIGC 技术的智能化照片美颜精修系统
+> **JESR Portrait Retouch Platform** — Joint Evaluation Scoring & Rendering for Automated Portrait Retouch  
+> An AIGC-powered intelligent photo beauty retouching system
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![TypeScript](https://img.shields.io/badge/typescript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688.svg)](https://fastapi.tiangolo.com/)
+[![中文](https://img.shields.io/badge/readme-中文-red.svg)](https://github-com.translate.goog/ljun95255-netizen/HelloBeauty?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=zh-CN)
 
 **HelloBeauty** is an AIGC-powered portrait retouch platform that replaces traditional filter-based workflows with a **perception → decision → execution pipeline**. It introduces the **JESR-Aesthetic-Profile** — an 8-dimensional feature vector that bridges user intent to rendering parameters — and a **metric-controlled guard** that ensures identity preservation during generative edits.
 
 ---
 
-## 系统架构 · System Architecture
+## System Architecture
 
 ![System Architecture](docs/images/architecture.svg)
 
 The pipeline has five layers:
 
-| 层 Layer | 模块 Module | 职责 Responsibility |
+| Layer | Components | Responsibility |
 |:---|:---|:---|
-| **Entry** 入口 | Phone Upload · Seed Gallery · Preference QA · Reference | User intent via swipe, questionnaire, or reference photos |
-| **JESR-Core** 核心 | Aesthetic Profile Engine · Recipe System · Style Presets | 8-dim profile vector → parameterized recipe (tone/face/creative) |
-| **Orchestrator** 编排 | Recipe Compilation · Feedback · Rollback · Audit Trace | Stateful SISO loop: iterate → feedback → update → re-render |
-| **Rendering** 渲染 | JESR-Fidelity · JESR-Creative · Metric Control Guard | Smart optimize + targeted retouch → diffusion img2img → identity check |
-| **Output** 输出 | Image Delivery · Session Store · Model Registry · Logging | Rendered result via `/api/assets/job/{id}` |
+| **Entry** | Phone Upload · Seed Gallery · Preference QA · Reference | User intent via swipe, questionnaire, or reference photos |
+| **JESR-Core** | Aesthetic Profile Engine · Recipe System · Style Presets | 8-dim profile vector → parameterized recipe (tone/face/creative) |
+| **Orchestrator** | Recipe Compilation · Feedback · Rollback · Audit Trace | Stateful SISO loop: iterate → feedback → update → re-render |
+| **Rendering** | JESR-Fidelity · JESR-Creative · Metric Control Guard | Smart optimize + targeted retouch → diffusion img2img → identity check |
+| **Output** | Image Delivery · Session Store · Model Registry · Logging | Rendered result via `/api/assets/job/{id}` |
 
 ### JESR-Aesthetic-Profile Vector
 
-The profile encodes user aesthetic preferences in 8 continuous dimensions (range [-1, 1]):
+The profile encodes user aesthetic preferences in 8 continuous dimensions (range [−1, 1]):
 
 | Dimension | Description |
 |:---|:---|
@@ -47,7 +48,7 @@ Before delivering creative (diffusion img2img) output, the system evaluates iden
 
 ---
 
-## 仓库结构 · Repository Structure
+## Repository Structure
 
 ```
 HelloBeauty/
@@ -73,7 +74,7 @@ HelloBeauty/
 
 ---
 
-## 核心亮点 · Key Innovations
+## Key Innovations
 
 ### 1. Profile-Driven Recipe Compilation
 User preferences (from swipe sampling or questionnaire) are not treated as direct sliders. Instead, the 8-dim profile vector maps through **8 linear algebraic transforms** into tone, face, and creative parameters — ensuring cross-dimensional consistency.
@@ -89,12 +90,12 @@ Model manifests and adapter code live in the repository. Model weights (GPEN, SS
 
 ---
 
-## 技术栈 · Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |:---|:---|
 | Backend API | Python 3.10+ · FastAPI · Uvicorn |
-| JESR-Core | Python (pure NumPy-free profile engine) |
+| JESR-Core | Python (pure algorithm — no NumPy dependency) |
 | Rendering | GPEN BFR512 (face restoration) · SSD-1B diffusers (style transfer) |
 | Identity Metric | ArcFace · FaceNet |
 | Frontend Mini | TypeScript · Taro 3.x · React |
@@ -103,7 +104,7 @@ Model manifests and adapter code live in the repository. Model weights (GPEN, SS
 
 ---
 
-## 快速开始 · Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.10+ with `pip`
@@ -135,41 +136,31 @@ npm run build:mini
 
 ---
 
-## 注意事项 · Important Notes
+## What's Included & What's Not
 
-### ⚠️ 此仓库包含什么 · What's Included
-- ✅ 完整 API 路由层 (full API surface — all routes & contracts)
-- ✅ JESR 编排器与度量控制核心算法 (orchestrator + metric control algorithm)
-- ✅ JESR-Aesthetic-Profile 引擎 (8-dim profile vector with mathematical transforms)
-- ✅ TypeScript 领域类型定义 (shared domain types & API client interfaces)
-- ✅ 前端关键页面组件 (key frontend pages for architecture reference)
-- ✅ 测试文件 (tests demonstrating API contracts)
-- ✅ 系统架构图 (architecture diagram)
+### ✅ Included
+- Full API route surface — all endpoints and contracts
+- JESR Orchestrator and Metric Control core algorithms
+- JESR-Aesthetic-Profile engine (8-dim profile vector with mathematical transforms)
+- TypeScript domain type definitions and API client interfaces
+- Key frontend pages for architecture reference
+- Test files demonstrating API contracts
+- Architecture diagram
 
-### ⚠️ 此仓库不包含什么 · What's NOT Included
-- ❌ **模型权重 (Model Weights)** — GPEN BFR512, SSD-1B, ArcFace models distributed via GitHub Releases
-- ❌ **模型适配器实现 (Model Adapters)** — `backend/model_adapters/` 包含特定模型的命令路径
-- ❌ **模型清单/注册表 (Model Registry)** — `backend/models/` 包含版本哈希与模型元数据
-- ❌ **渲染工作进程 (Render Worker)** — `backend/workers/` 后台渲染逻辑
-- ❌ **实验脚本 (Experiment Scripts)** — `scripts/run_real_metric_experiments.py`（117 KB 实验脚本）
-- ❌ **供应商库 (Vendor Libraries)** — `vendor/` 及 `npm/` 目录
-- ❌ **图片资源库 (Beauty Gallery)** — `beauty/` 示例人像照片
-- ❌ **完整前端项目文件 (Complete IDE Project)** — 仅包含代表性页面，非完整可构建项目
+### ❌ Not Included
+- **Model Weights** — GPEN BFR512, SSD-1B, ArcFace distributed via GitHub Releases
+- **Model Adapters** — `backend/model_adapters/` with model-specific command paths
+- **Model Registry** — `backend/models/` with version hashes and metadata
+- **Render Worker** — `backend/workers/` background rendering logic
+- **Experiment Scripts** — `scripts/run_real_metric_experiments.py` (117 KB)
+- **Vendor Libraries** — `vendor/` and `npm/` directories
+- **Beauty Gallery** — `beauty/` sample portrait photos
+- **Complete IDE Project** — representative pages only, not a fully buildable project
 
-> **设计意图：** 此仓库展示系统架构、核心算法与 API 契约，足够理解 JESR 系统设计但无法直接克隆运行。模型权重与完整项目文件通过其他渠道分发。
+> **Design Intent:** This repository demonstrates system architecture, core algorithms, and API contracts — sufficient to understand the JESR system design but not directly clone-and-run. Model weights and complete project files are distributed through other channels.
 
 ---
 
-## 许可证 · License
+## License
 
 Apache 2.0 © 2024 HelloBeauty Contributors. See [LICENSE](LICENSE).
-
----
-
-## 致谢 · Acknowledgements
-
-本项目源于本科毕业设计《基于 AIGC 技术的智能化照片美颜精修系统的设计与实现》。
-
-> "如何在维持身份一致性前提下，对五官比例、肤质细节、妆容风格及光影关系进行可控、自然的联合编辑；如何依据用户隐式或极少显式偏好生成非模板化的个性化结果。" — 研究意义
-
-JESR stands for **Joint Evaluation Scoring & Rendering** — evaluating aesthetic quality and identity preservation jointly during the rendering decision process.

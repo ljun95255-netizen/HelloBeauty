@@ -2,146 +2,124 @@
   <rect width="1060" height="780" fill="#FFFFFF"/>
 
   <!-- Title -->
-  <text x="530" y="34" fill="#0F172A" font-size="18" font-weight="700" text-anchor="middle">HelloBeauty — JESR 人像精修平台</text>
-  <text x="530" y="56" fill="#94A3B8" font-size="10.5" text-anchor="middle">Joint Evaluation Scoring &amp; Rendering · Profile-Driven Closed-Loop Pipeline · 画像美学引擎驱动的闭环精修系统</text>
+  <text x="530" y="34" fill="#0F172A" font-size="18" font-weight="700" text-anchor="middle">HelloBeauty — JESR Portrait Retouch Platform</text>
+  <text x="530" y="58" fill="#94A3B8" font-size="10.5" text-anchor="middle">Joint Evaluation Scoring &amp; Rendering · Profile-Driven Closed-Loop Pipeline</text>
 
   <!-- ===== LAYER 1: ENTRY ===== -->
-  <rect x="20" y="78" width="1020" height="108" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <rect x="20" y="78" width="1020" height="26" rx="8" fill="#DBEAFE"/>
-  <rect x="20" y="90" width="1020" height="14" rx="0" fill="#DBEAFE"/>
-  <text x="36" y="95" fill="#1E40AF" font-size="11" font-weight="700">ENTRY · 用户意图捕获 User Intent Capture</text>
-  <text x="1024" y="95" fill="#93C5FD" font-size="9" text-anchor="end">Layer 1 / 5</text>
+  <rect x="20" y="80" width="1020" height="110" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <rect x="20" y="80" width="1020" height="28" rx="8" fill="#DBEAFE"/>
+  <rect x="20" y="92" width="1020" height="16" rx="0" fill="#DBEAFE"/>
+  <text x="36" y="97" fill="#1E40AF" font-size="11" font-weight="700">ENTRY · User Intent Capture</text>
+  <text x="1024" y="97" fill="#93C5FD" font-size="9" text-anchor="end">1 / 5</text>
 
-  <rect x="40" y="118" width="225" height="55" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
-  <text x="152" y="142" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">📱 Phone Upload 手机上传</text>
-  <text x="152" y="160" fill="#64748B" font-size="8" text-anchor="middle">Camera / Album → IngressService</text>
+  <rect x="40" y="122" width="225" height="56" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="152" y="146" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">📱 Phone Upload</text>
+  <text x="152" y="165" fill="#64748B" font-size="8" text-anchor="middle">Camera / Album → IngressService</text>
 
-  <rect x="290" y="118" width="225" height="55" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
-  <text x="402" y="142" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">🎴 Seed Gallery 种子画廊</text>
-  <text x="402" y="160" fill="#64748B" font-size="8" text-anchor="middle">Swipe like/dislike → Profile vector</text>
+  <rect x="290" y="122" width="225" height="56" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="402" y="146" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">🎴 Seed Gallery</text>
+  <text x="402" y="165" fill="#64748B" font-size="8" text-anchor="middle">Swipe like/dislike → Profile vector</text>
 
-  <rect x="540" y="118" width="225" height="55" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
-  <text x="652" y="142" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">📋 Preference QA 偏好问答</text>
-  <text x="652" y="160" fill="#64748B" font-size="8" text-anchor="middle">Questionnaire → 8-dim aesthetic vector</text>
+  <rect x="540" y="122" width="225" height="56" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="652" y="146" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">📋 Preference QA</text>
+  <text x="652" y="165" fill="#64748B" font-size="8" text-anchor="middle">Questionnaire → 8-dim aesthetic profile</text>
 
-  <rect x="790" y="118" width="225" height="55" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
-  <text x="902" y="142" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">🖼️ Reference Photo 参考图</text>
-  <text x="902" y="160" fill="#64748B" font-size="8" text-anchor="middle">Manual style anchor selection</text>
-
-  <!-- Subtle flow indicator between layers -->
-  <polygon points="530,192 538,204 522,204" fill="#CBD5E1"/>
+  <rect x="790" y="122" width="225" height="56" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="902" y="146" fill="#1E3A8A" font-size="11" font-weight="700" text-anchor="middle">🖼️ Reference Photo</text>
+  <text x="902" y="165" fill="#64748B" font-size="8" text-anchor="middle">Manual style anchor selection</text>
 
   <!-- ===== LAYER 2: JESR-CORE ===== -->
-  <rect x="20" y="210" width="1020" height="130" rx="8" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <rect x="20" y="210" width="1020" height="26" rx="8" fill="#EDE9FE"/>
-  <rect x="20" y="222" width="1020" height="14" rx="0" fill="#EDE9FE"/>
-  <text x="36" y="227" fill="#5B21B6" font-size="11" font-weight="700">JESR-CORE · 美学画像引擎 JESR-Aesthetic-Profile Engine</text>
-  <text x="1024" y="227" fill="#C4B5FD" font-size="9" text-anchor="end">Layer 2 / 5</text>
+  <rect x="20" y="216" width="1020" height="132" rx="8" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <rect x="20" y="216" width="1020" height="28" rx="8" fill="#EDE9FE"/>
+  <rect x="20" y="228" width="1020" height="16" rx="0" fill="#EDE9FE"/>
+  <text x="36" y="233" fill="#5B21B6" font-size="11" font-weight="700">JESR-CORE · JESR-Aesthetic-Profile Engine</text>
+  <text x="1024" y="233" fill="#C4B5FD" font-size="9" text-anchor="end">2 / 5</text>
 
-  <rect x="40" y="250" width="310" height="75" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
-  <text x="195" y="273" fill="#5B21B6" font-size="11.5" font-weight="700" text-anchor="middle">JESR-Aesthetic-Profile 美学画像</text>
-  <text x="195" y="292" fill="#64748B" font-size="8" text-anchor="middle">8-dim: [light_tendency, warmth, contrast, texture_tendency,</text>
-  <text x="195" y="306" fill="#64748B" font-size="8" text-anchor="middle">makeup_intensity, facial_detail, style_strength, identity_tolerance]</text>
-  <text x="195" y="319" fill="#94A3B8" font-size="7.5" text-anchor="middle">All ∈ [-1, 1] · Source: seed_gallery | reference_photos | questionnaire | hybrid</text>
+  <rect x="40" y="258" width="310" height="76" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+  <text x="195" y="282" fill="#5B21B6" font-size="11.5" font-weight="700" text-anchor="middle">JESR-Aesthetic-Profile</text>
+  <text x="195" y="301" fill="#64748B" font-size="8" text-anchor="middle">8-dim: [light_tendency, warmth, contrast, texture_tendency,</text>
+  <text x="195" y="315" fill="#64748B" font-size="8" text-anchor="middle">makeup_intensity, facial_detail, style_strength, identity_tolerance]</text>
+  <text x="195" y="329" fill="#94A3B8" font-size="7.5" text-anchor="middle">All ∈ [−1, 1] · Source: seed_gallery | reference_photos | questionnaire | hybrid</text>
 
-  <rect x="380" y="250" width="280" height="75" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
-  <text x="520" y="273" fill="#5B21B6" font-size="11" font-weight="700" text-anchor="middle">Recipe System 配方系统 (jesr_core.v1)</text>
-  <text x="520" y="292" fill="#64748B" font-size="8" text-anchor="middle">Tone {brightness, warmth, contrast}</text>
-  <text x="520" y="306" fill="#64748B" font-size="8" text-anchor="middle">Face {skin_smooth, face_slim, eye_size, lip_saturation, ...}</text>
-  <text x="520" y="319" fill="#64748B" font-size="8" text-anchor="middle">Creative {preset_id, strength} · Feedback {pain_tags, free_text}</text>
+  <rect x="380" y="258" width="280" height="76" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="520" y="282" fill="#5B21B6" font-size="11" font-weight="700" text-anchor="middle">Recipe System (jesr_core.v1)</text>
+  <text x="520" y="301" fill="#64748B" font-size="8" text-anchor="middle">Tone {brightness, warmth, contrast}</text>
+  <text x="520" y="315" fill="#64748B" font-size="8" text-anchor="middle">Face {skin_smooth, face_slim, eye_size, lip_saturation, ...}</text>
+  <text x="520" y="329" fill="#64748B" font-size="8" text-anchor="middle">Creative {preset_id, strength} · Feedback {pain_tags, free_text}</text>
 
-  <rect x="690" y="250" width="325" height="75" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
-  <text x="852" y="273" fill="#5B21B6" font-size="11" font-weight="700" text-anchor="middle">5 Creative Style Presets 创意风格预设</text>
-  <text x="852" y="293" fill="#64748B" font-size="8" text-anchor="middle">fresh_japanese 清新日系 · retro_hongkong 复古港风</text>
-  <text x="852" y="307" fill="#64748B" font-size="8" text-anchor="middle">clear_korean 清透韩系 · lazy_french 法式慵懒</text>
-  <text x="852" y="320" fill="#64748B" font-size="8" text-anchor="middle">american_hotgirl 美式辣妹</text>
-
-  <!-- Subtle flow indicator -->
-  <polygon points="530,346 538,358 522,358" fill="#CBD5E1"/>
+  <rect x="690" y="258" width="325" height="76" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="852" y="282" fill="#5B21B6" font-size="11" font-weight="700" text-anchor="middle">5 Creative Style Presets</text>
+  <text x="852" y="302" fill="#64748B" font-size="8" text-anchor="middle">fresh_japanese · retro_hongkong</text>
+  <text x="852" y="316" fill="#64748B" font-size="8" text-anchor="middle">clear_korean · lazy_french</text>
+  <text x="852" y="329" fill="#64748B" font-size="8" text-anchor="middle">american_hotgirl</text>
 
   <!-- ===== LAYER 3: ORCHESTRATOR ===== -->
-  <rect x="20" y="364" width="1020" height="108" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <rect x="20" y="364" width="1020" height="26" rx="8" fill="#DCFCE7"/>
-  <rect x="20" y="376" width="1020" height="14" rx="0" fill="#DCFCE7"/>
-  <text x="36" y="381" fill="#166534" font-size="11" font-weight="700">JESR-ORCHESTRATOR · 编排调度 Recipe · Feedback · Rollback · Audit</text>
-  <text x="1024" y="381" fill="#86EFAC" font-size="9" text-anchor="end">Layer 3 / 5</text>
+  <rect x="20" y="374" width="1020" height="110" rx="8" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <rect x="20" y="374" width="1020" height="28" rx="8" fill="#DCFCE7"/>
+  <rect x="20" y="386" width="1020" height="16" rx="0" fill="#DCFCE7"/>
+  <text x="36" y="391" fill="#166534" font-size="11" font-weight="700">JESR-ORCHESTRATOR · Recipe · Feedback · Rollback · Audit</text>
+  <text x="1024" y="391" fill="#86EFAC" font-size="9" text-anchor="end">3 / 5</text>
 
-  <rect x="40" y="404" width="220" height="55" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="150" y="427" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Recipe Compilation 配方编译</text>
-  <text x="150" y="445" fill="#64748B" font-size="8" text-anchor="middle">Profile vector → 8 linear mapping → recipe params</text>
+  <rect x="40" y="416" width="220" height="56" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="150" y="439" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Recipe Compilation</text>
+  <text x="150" y="458" fill="#64748B" font-size="8" text-anchor="middle">Profile vector → 8 linear mappings → recipe</text>
 
-  <rect x="285" y="404" width="220" height="55" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="395" y="427" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Feedback Interpreter 反馈解释</text>
-  <text x="395" y="445" fill="#64748B" font-size="8" text-anchor="middle">3 pain tags: identity · texture · style</text>
+  <rect x="285" y="416" width="220" height="56" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="395" y="439" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Feedback Interpreter</text>
+  <text x="395" y="458" fill="#64748B" font-size="8" text-anchor="middle">3 pain tags: identity · texture · style</text>
 
-  <rect x="530" y="404" width="220" height="55" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="640" y="427" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Rollback 回滚</text>
-  <text x="640" y="445" fill="#64748B" font-size="8" text-anchor="middle">Iteration-level versioned undo</text>
+  <rect x="530" y="416" width="220" height="56" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="640" y="439" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Rollback</text>
+  <text x="640" y="458" fill="#64748B" font-size="8" text-anchor="middle">Iteration-level versioned undo</text>
 
-  <rect x="775" y="404" width="240" height="55" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="895" y="427" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Audit Trace 审计追踪</text>
-  <text x="895" y="445" fill="#64748B" font-size="8" text-anchor="middle">Provider chain · Model info · Param snapshot</text>
-
-  <!-- Subtle flow indicator -->
-  <polygon points="530,478 538,490 522,490" fill="#CBD5E1"/>
+  <rect x="775" y="416" width="240" height="56" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="895" y="439" fill="#166534" font-size="10.5" font-weight="700" text-anchor="middle">Audit Trace</text>
+  <text x="895" y="458" fill="#64748B" font-size="8" text-anchor="middle">Provider chain · Model info · Param snapshot</text>
 
   <!-- ===== LAYER 4: RENDERING ===== -->
-  <rect x="20" y="496" width="1020" height="145" rx="8" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <rect x="20" y="496" width="1020" height="26" rx="8" fill="#FFEDD5"/>
-  <rect x="20" y="508" width="1020" height="14" rx="0" fill="#FFEDD5"/>
-  <text x="36" y="513" fill="#C2410C" font-size="11" font-weight="700">RENDERING · 渲染管线 Fidelity + Creative + Metric Control Guard</text>
-  <text x="1024" y="513" fill="#FDBA74" font-size="9" text-anchor="end">Layer 4 / 5</text>
+  <rect x="20" y="510" width="1020" height="147" rx="8" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <rect x="20" y="510" width="1020" height="28" rx="8" fill="#FFEDD5"/>
+  <rect x="20" y="522" width="1020" height="16" rx="0" fill="#FFEDD5"/>
+  <text x="36" y="527" fill="#C2410C" font-size="11" font-weight="700">RENDERING · Fidelity + Creative + Metric Control Guard</text>
+  <text x="1024" y="527" fill="#FDBA74" font-size="9" text-anchor="end">4 / 5</text>
 
-  <rect x="40" y="535" width="300" height="93" rx="6" fill="#FFFFFF" stroke="#EA580C" stroke-width="1.8"/>
-  <text x="190" y="558" fill="#9A3412" font-size="11" font-weight="700" text-anchor="middle">JESR-Fidelity 保真渲染</text>
-  <text x="190" y="578" fill="#64748B" font-size="8" text-anchor="middle">smart_optimize 一键智能优化 — Global auto-retouch</text>
-  <text x="190" y="594" fill="#64748B" font-size="8" text-anchor="middle">targeted_retouch 针对性精修 — Per-region parameters</text>
-  <text x="190" y="610" fill="#64748B" font-size="8" text-anchor="middle">Skin · Eye · Nose · Face shape · Lip · Neck · Body ratio</text>
-  <text x="190" y="624" fill="#94A3B8" font-size="7.5" text-anchor="middle">Powered by GPEN BFR512 Face Restoration</text>
+  <rect x="40" y="550" width="300" height="95" rx="6" fill="#FFFFFF" stroke="#EA580C" stroke-width="1.8"/>
+  <text x="190" y="574" fill="#9A3412" font-size="11" font-weight="700" text-anchor="middle">JESR-Fidelity</text>
+  <text x="190" y="594" fill="#64748B" font-size="8" text-anchor="middle">smart_optimize — Global auto-retouch</text>
+  <text x="190" y="610" fill="#64748B" font-size="8" text-anchor="middle">targeted_retouch — Per-region parameters</text>
+  <text x="190" y="626" fill="#64748B" font-size="8" text-anchor="middle">Skin · Eye · Nose · Face shape · Lip · Neck · Body ratio</text>
+  <text x="190" y="641" fill="#94A3B8" font-size="7.5" text-anchor="middle">Powered by GPEN BFR512 Face Restoration</text>
 
-  <rect x="365" y="535" width="300" height="93" rx="6" fill="#FFFFFF" stroke="#EA580C" stroke-width="1.8"/>
-  <text x="515" y="558" fill="#9A3412" font-size="11" font-weight="700" text-anchor="middle">JESR-Creative 创意渲染</text>
-  <text x="515" y="578" fill="#64748B" font-size="8" text-anchor="middle">Diffusion img2img Style Transfer 扩散模型风格迁移</text>
-  <text x="515" y="594" fill="#64748B" font-size="8" text-anchor="middle">5 creative presets · Strength ∈ [0, 0.30]</text>
-  <text x="515" y="610" fill="#64748B" font-size="8" text-anchor="middle">Conditional denoising pipeline 条件去噪流水线</text>
-  <text x="515" y="624" fill="#94A3B8" font-size="7.5" text-anchor="middle">Powered by SSD-1B diffusers</text>
+  <rect x="365" y="550" width="300" height="95" rx="6" fill="#FFFFFF" stroke="#EA580C" stroke-width="1.8"/>
+  <text x="515" y="574" fill="#9A3412" font-size="11" font-weight="700" text-anchor="middle">JESR-Creative</text>
+  <text x="515" y="594" fill="#64748B" font-size="8" text-anchor="middle">Diffusion img2img Style Transfer</text>
+  <text x="515" y="610" fill="#64748B" font-size="8" text-anchor="middle">5 creative presets · Strength ∈ [0, 0.30]</text>
+  <text x="515" y="626" fill="#64748B" font-size="8" text-anchor="middle">Conditional denoising pipeline</text>
+  <text x="515" y="641" fill="#94A3B8" font-size="7.5" text-anchor="middle">Powered by SSD-1B diffusers</text>
 
-  <!-- Horizontal flow arrows between fidelity → creative → guard (subtle) -->
-  <line x1="343" y1="581" x2="362" y2="581" stroke="#FED7AA" stroke-width="2"/>
-  <polygon points="362,578 365,581 362,584" fill="#FED7AA"/>
-  <line x1="668" y1="581" x2="687" y2="581" stroke="#FED7AA" stroke-width="2"/>
-  <polygon points="687,578 690,581 687,584" fill="#FED7AA"/>
-
-  <rect x="695" y="535" width="320" height="93" rx="6" fill="#FFFFFF" stroke="#E11D48" stroke-width="2.2"/>
-  <text x="855" y="558" fill="#BE123C" font-size="11" font-weight="700" text-anchor="middle">🛡️ Metric Control Guard 度量控制守卫</text>
-  <text x="855" y="578" fill="#64748B" font-size="8" text-anchor="middle">Identity check: ArcFace SIM ≥ θ threshold (default 0.72)</text>
-  <text x="855" y="594" fill="#64748B" font-size="8" text-anchor="middle">Strength retry: 4 descending steps (floor 0.08)</text>
-  <text x="855" y="610" fill="#64748B" font-size="8" text-anchor="middle">Pass → deliver creative · Fail → fallback to fidelity</text>
-  <text x="855" y="624" fill="#94A3B8" font-size="7.5" text-anchor="middle">ArcFace + FaceNet dual evaluator</text>
-
-  <!-- Subtle flow indicator -->
-  <polygon points="530,647 538,659 522,659" fill="#CBD5E1"/>
+  <rect x="695" y="550" width="320" height="95" rx="6" fill="#FFFFFF" stroke="#E11D48" stroke-width="2.2"/>
+  <text x="855" y="574" fill="#BE123C" font-size="11" font-weight="700" text-anchor="middle">Metric Control Guard</text>
+  <text x="855" y="594" fill="#64748B" font-size="8" text-anchor="middle">Identity check: ArcFace SIM ≥ θ threshold (0.72)</text>
+  <text x="855" y="610" fill="#64748B" font-size="8" text-anchor="middle">Strength retry: 4 descending steps (floor 0.08)</text>
+  <text x="855" y="626" fill="#64748B" font-size="8" text-anchor="middle">Pass → deliver creative · Fail → fallback to fidelity</text>
+  <text x="855" y="641" fill="#94A3B8" font-size="7.5" text-anchor="middle">ArcFace + FaceNet dual evaluator</text>
 
   <!-- ===== LAYER 5: OUTPUT ===== -->
-  <rect x="20" y="665" width="1020" height="92" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <rect x="20" y="665" width="1020" height="26" rx="8" fill="#F1F5F9"/>
-  <rect x="20" y="677" width="1020" height="14" rx="0" fill="#F1F5F9"/>
-  <text x="36" y="682" fill="#475569" font-size="11" font-weight="700">OUTPUT · 输出 Delivery · Persistence · Logging</text>
-  <text x="1024" y="682" fill="#CBD5E1" font-size="9" text-anchor="end">Layer 5 / 5</text>
+  <rect x="20" y="683" width="1020" height="80" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <rect x="20" y="683" width="1020" height="28" rx="8" fill="#F1F5F9"/>
+  <rect x="20" y="695" width="1020" height="16" rx="0" fill="#F1F5F9"/>
+  <text x="36" y="700" fill="#475569" font-size="11" font-weight="700">OUTPUT · Delivery · Persistence · Logging</text>
+  <text x="1024" y="700" fill="#CBD5E1" font-size="9" text-anchor="end">5 / 5</text>
 
-  <rect x="40" y="704" width="230" height="42" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="155" y="721" fill="#475569" font-size="10" font-weight="700" text-anchor="middle">Rendered Image 渲染结果</text>
-  <text x="155" y="737" fill="#94A3B8" font-size="7.5" text-anchor="middle">/api/assets/job/{job_id}</text>
+  <rect x="40" y="720" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
+  <text x="155" y="739" fill="#475569" font-size="9.5" font-weight="700" text-anchor="middle">Rendered Image</text>
 
-  <rect x="295" y="704" width="230" height="42" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="410" y="721" fill="#475569" font-size="10" font-weight="700" text-anchor="middle">Session Store 会话存储</text>
-  <text x="410" y="737" fill="#94A3B8" font-size="7.5" text-anchor="middle">In-memory · Recipe history · Audit traces</text>
+  <rect x="295" y="720" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
+  <text x="410" y="739" fill="#475569" font-size="9.5" font-weight="700" text-anchor="middle">Session Store + Traces</text>
 
-  <rect x="550" y="704" width="230" height="42" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="665" y="721" fill="#475569" font-size="10" font-weight="700" text-anchor="middle">Model Registry 模型分发</text>
-  <text x="665" y="737" fill="#94A3B8" font-size="7.5" text-anchor="middle">Code in Git · Weights via Release</text>
+  <rect x="550" y="720" width="230" height="32" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
+  <text x="665" y="739" fill="#475569" font-size="9.5" font-weight="700" text-anchor="middle">Model Registry</text>
 
-  <rect x="805" y="704" width="210" height="42" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
-  <text x="910" y="721" fill="#475569" font-size="10" font-weight="700" text-anchor="middle">Metric Logging 度量记录</text>
-  <text x="910" y="737" fill="#94A3B8" font-size="7.5" text-anchor="middle">IPS · SAS · SID · FHS · ODI · CEN</text>
+  <rect x="805" y="720" width="210" height="32" rx="5" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
+  <text x="910" y="739" fill="#475569" font-size="9.5" font-weight="700" text-anchor="middle">Metric Logging</text>
 </svg>
